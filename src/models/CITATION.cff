@@ -1,12 +1,41 @@
-📜 Citation
-
-If you find this work useful for your research, please cite:
-
-@software{Hiremath_ECG-TransNet_2026,
-  author = {Hiremath, Prakul},
-  title = {{ECG-TransNet: A Hybrid CNN-Transformer Framework for Explainable Arrhythmia Detection}},
-  url = {https://github.com/prakulhiremath/ECG-TransNet-Arrhythmia-Detection},
-  version = {1.0.0},
-  year = {2026},
-  publisher = {GitHub}
-}
+cff-version: 1.2.0
+message: "If you use this software or the MIT-BIH dataset within this framework, please cite both the original database and this repository."
+authors:
+  - family-names: "Hiremath"
+    given-names: "Prakul"
+    affiliation: "Independent Researcher"
+title: "ECG-TransNet: Hybrid CNN-Transformer for Arrhythmia Detection"
+version: 1.0.0
+date-released: 2026-02-05
+repository-code: "https://github.com/prakulhiremath/ECG-TransNet-Arrhythmia-Detection"
+keywords:
+  - arrhythmia
+  - ecg
+  - transformers
+  - deep-learning
+  - physionet
+  - explainable-ai
+references:
+  - type: article
+    authors:
+      - family-names: "Moody"
+        given-names: "George B."
+      - family-names: "Mark"
+        given-names: "Roger G."
+    title: "The impact of the MIT-BIH Arrhythmia Database"
+    journal: "IEEE Engineering in Medicine and Biology Magazine"
+    year: 2001
+    volume: 20
+    issue: 3
+    pages: "45-50"
+    doi: "10.1109/51.932724"
+  - type: article
+    authors:
+      - family-names: "Goldberger"
+        given-names: "A."
+      - family-names: "Amaral"
+        given-names: "L."
+    title: "PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals"
+    journal: "Circulation"
+    year: 2000
+    doi: "10.1161/01.CIR.101.23.e215"
