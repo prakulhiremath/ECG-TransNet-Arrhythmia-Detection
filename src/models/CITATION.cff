@@ -1,0 +1,12 @@
+## 📜 Citation
+
+If you find this work useful for your research, please cite:
+
+@software{Hiremath_ECG-TransNet_2026,
+  author = {Hiremath, Prakul},
+  title = {{ECG-TransNet: A Hybrid CNN-Transformer Framework for Explainable Arrhythmia Detection}},
+  url = {https://github.com/prakulhiremath/ECG-TransNet-Arrhythmia-Detection},
+  version = {1.0.0},
+  year = {2026},
+  publisher = {GitHub}
+}
