@@ -1,11 +1,15 @@
+# Core ML
 torch>=2.0.1
-torchvision
-wfdb           # Essential for MIT-BIH data
-numpy
+wfdb>=4.1.2
+numpy<2.0.0
 pandas
-scipy
-scikit-learn
+
+# Visualization & Interpretability
 matplotlib
-seaborn        # For the confusion matrix plots
-shap           # For interpret.py
-captum         # For Grad-CAM/Saliency maps
+seaborn
+shap
+captum
+
+# Utilities
+scikit-learn
+scipy
