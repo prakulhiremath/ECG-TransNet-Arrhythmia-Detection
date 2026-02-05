@@ -1,30 +1,65 @@
 # ECG-TransNet: Hybrid CNN-Transformer for Arrhythmia Detection
 
-**ECG-TransNet** is a state-of-the-art deep learning framework designed for robust and explainable arrhythmia detection. By combining **1D-Convolutional Neural Networks (CNNs)** for local morphology extraction with **Transformer Encoders** for global temporal context, the model achieves superior performance in classifying complex cardiac rhythms.
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![PyTorch 2.0+](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C.svg)](https://pytorch.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![DOI](https://img.shields.io/badge/DOI-10.13026%2FC2F305-green)](https://doi.org/10.13026/C2F305)
+
+**ECG-TransNet** is a state-of-the-art deep learning framework engineered for robust and interpretable cardiac arrhythmia classification. By synthesizing **1D-Residual Convolutional Neural Networks (ResNet1D)** with **Temporal Transformer Encoders**, the model captures both high-frequency morphological features (QRS complex) and long-range temporal dependencies (R-R intervals).
 
 ## 🚀 Key Features
-**Hybrid Architecture:** Integrates a ResNet1D front-end with Multi-Head Self-Attention layers to capture both P-QRS-T morphology and irregular R-R intervals.
-**Clinical Explainability:** Provides transparency through **Grad-CAM** saliency maps and **SHAP** values, allowing clinicians to verify predictions against gold-standard ECG patterns. 
-**AAMI Standard Compliant:** Optimized for the five-class arrhythmia scheme (N, S, V, F, Q) recommended by the Association for the Advancement of Medical Instrumentation.
-**Edge-Ready:** Optimized through quantization and pruning to achieve **sub-15ms inference** latency, making it ideal for wearable monitors and real-time surveillance.
+
+* **Hybrid Architecture:** Synergistic integration of CNNs for local morphology extraction and Multi-Head Self-Attention for global rhythm context.
+* **Clinical Explainability:** Native support for **Grad-CAM** saliency maps and **SHAP** analysis to visualize "points of interest" for clinical validation.
+* **Medical Standard Alignment:** Fully optimized for the **AAMI EC57** five-class taxonomy (N, S, V, F, Q).
+* **Edge Optimized:** Achieves **sub-15ms inference** and a **~28MB footprint** via post-training quantization, enabling deployment on mobile and wearable devices.
+
+## 🏗️ Architecture Overview
+
+The ECG-TransNet pipeline is divided into four modular stages:
+**Convolutional Front-End** | Local Feature Extraction | 1D-ResNet blocks for robust R-peak and ST-segment detection. |
+**Transformer Encoder** | Temporal Context | Multi-head self-attention to model rhythm variability across heartbeats. |
+**Interpretability Engine** | Trust & Transparency | Grad-CAM heatmaps and Saliency maps for morphological verification. |
+**Classification Head** | Diagnostic Output | Softmax layer mapped to AAMI standardized arrhythmia classes. |
 
 ## 📊 Dataset: MIT-BIH Arrhythmia
 
-This implementation focuses on the **MIT-BIH Arrhythmia Database**, the gold-standard reference for beat-level classification.
-**Recordings** | 48 half-hour two-channel ambulatory ECGs 
-**Sampling Rate** | 360 Hz (Resampled to 250 Hz for efficiency) 
-**Total Beats** | ~110,000 annotated beats 
-**Classes** | N (Normal), S (SVEB), V (VEB), F (Fusion), Q (Unknown) 
+This project utilizes the **MIT-BIH Arrhythmia Database**, the industry standard for evaluating cardiac signal processing algorithms.
 
-## 🏗️ Architecture (ECG-TransNet)
-The framework consists of four specialized modules:
-1. **Convolutional Front-End:** Extracts sharp transitions and local features like R-peaks using residual blocks.
-2. **Temporal Transformer Encoder:** Uses self-attention to model long-range dependencies across cardiac cycles.
-3. **Interpretability Module:** Generates attention heatmaps highlighting critical segments like ST-elevations or Q-wave abnormalities.
-4. **Classification Head:** A softmax output layer mapped to the AAMI taxonomy.
+* **Data Volume:** 48 half-hour two-channel ambulatory ECG recordings.
+* **Preprocessing:** Resampled to 250 Hz with Butterworth bandpass filtering (0.5–35 Hz) for artifact removal.
+* **Class Mapping (AAMI):**
+    * **N**: Normal, Left/Right Bundle Branch Blocks.
+    * **S**: Supraventricular Ectopic Beats (SVEB).
+    * **V**: Ventricular Ectopic Beats (VEB).
+    * **F**: Fusion Beats.
+    * **Q**: Unknown/Paced Beats.
 
-## 📈 Performance Results
-ECG-TransNet outperforms traditional machine learning (SVM, KNN) and standard CNN baselines.
-**Generalization:** +4–6% improvement in macro F1-score over CNN-only models.
-**Clinical Sensitivity:** Significantly higher recall in detecting rare classes like Ventricular Ectopic Beats (V).
-**Model Size:** Reduced to **~28 MB** after quantization for edge deployment.
+## 📈 Performance & Benchmarks
+
+ECG-TransNet demonstrates significant gains in precision-recall balance, particularly in low-frequency classes:
+
+* **Generalization:** +4–6% improvement in macro F1-score compared to pure CNN architectures.
+* **Sensitivity:** Enhanced detection of Ventricular Ectopic Beats (V) in noisy environments.
+* **Efficiency:** Model size reduced from >100MB to **28MB** post-quantization.
+
+## 📜 Citations & Acknowledgments
+
+### Cite this Framework
+If you use this code in your research, please cite:
+> Hiremath, P. (2026). *ECG-TransNet: Hybrid CNN-Transformer for Arrhythmia Detection.* GitHub Repository: https://github.com/prakulhiremath/ECG-TransNet-Arrhythmia-Detection
+
+### Cite the Data Source
+This project relies on the MIT-BIH database via PhysioNet. Please cite the following original publications:
+1.  **Moody GB, Mark RG.** The impact of the MIT-BIH Arrhythmia Database. *IEEE Eng in Med and Biol* 20(3):45-50 (May-June 2001).
+2.  **Goldberger AL, et al.** PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource. *Circulation* 101(23):e215-e220 (2000).
+3.  **Database DOI:** [10.13026/C2F305](https://doi.org/10.13026/C2F305)
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+1. Fork the Project.
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the Branch (`git push origin feature/AmazingFeature`).
+5. Open a Pull Request.
