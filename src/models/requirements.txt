@@ -1,0 +1,11 @@
+torch>=2.0.1
+torchvision
+wfdb           # Essential for MIT-BIH data
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+seaborn        # For the confusion matrix plots
+shap           # For interpret.py
+captum         # For Grad-CAM/Saliency maps
