@@ -74,7 +74,9 @@ class MITBIHLoader:
         return X, y
 
 if __name__ == "__main__":
-    # Test with one record
     loader = MITBIHLoader()
-    # Ensure you have downloaded record 100 into data/mit-bih-arrhythmia/
-    # X, y = loader.load_dataset(['100'])
+    X, y = loader.load_dataset(['100'])
+    print("Dataset loaded successfully")
+    print("X shape:", X.shape)
+    print("y shape:", y.shape)
+
