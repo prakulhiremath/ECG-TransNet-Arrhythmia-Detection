@@ -1,6 +1,5 @@
 <div align="center">
 
-<!-- ANIMATED HEADER BANNER -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:0a2540,100:00c9a7&height=220&section=header&text=ECG-TransNet&fontSize=72&fontColor=ffffff&fontAlignY=40&desc=Hybrid%20CNN%E2%80%93Transformer%20Arrhythmia%20Intelligence&descSize=18&descAlignY=65&animation=fadeIn"/>
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:f0f4ff,50:d6e4ff,100:00c9a7&height=220&section=header&text=ECG-TransNet&fontSize=72&fontColor=0a2540&fontAlignY=40&desc=Hybrid%20CNN%E2%80%93Transformer%20Arrhythmia%20Intelligence&descSize=18&descAlignY=65&animation=fadeIn"/>
