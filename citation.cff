@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Hiremath"
+    given-names: "Prakul"
+  - family-names: "Bagawan"
+    given-names: "M."
+title: "ECG-TransNet: Hybrid CNN-Transformer Framework for Arrhythmia Classification"
+version: "1.0.0"
+doi: "10.5281/zenodo.19698048"
+date-released: "2026-05-23"
+url: "https://github.com/prakulhiremath/ECG-TransNet-Arrhythmia-Detection"
+repository-code: "https://github.com/prakulhiremath/ECG-TransNet-Arrhythmia-Detection"
+keywords:
+  - "ecg"
+  - "arrhythmia-detection"
+  - "transformer"
+  - "resnet"
+  - "explainable-ai"
+  - "deep-learning"
+  - "cardiology"
+license: "MIT"
